@@ -19,6 +19,11 @@ public class TaskController {
 	@Autowired
 	private TaskServiceImp service;
 	
+	@GetMapping("/")
+	public String index() {
+		return "index";
+	}
+	
 	@GetMapping("/tasks")
 	public String getAllTasks(Model model, Task task){
 		List<Task> tasks = service.findAll();
@@ -43,7 +48,7 @@ public class TaskController {
 	public String deleteTaskById(@PathVariable("id") Long id, Model model) {
 		service.deleteTaskById(id);
 		model.addAttribute("message", "Task deleted Successfully");
-		return "result";
+		return "taskList";
 	}
 	
 	
