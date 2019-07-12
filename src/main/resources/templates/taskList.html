@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Joke</title>
+</head>
+<div th:insert="fragments/nav"></div>
+<body>
+
+	<h1>
+		<div th:text="${message}"></div>
+	</h1>
+	
+	<div th:if="${allTasks.empty}">
+		<h1>No Task Available</h1>
+	</div>
+	<ul th:each="task: ${allTasks}">
+		
+		<li><span>Title: </span><span th:text="${task.title}"></span></li>
+		<li><span>Description: </span><span th:text="${task.description}"></span></li>
+		<li><span>Created By: </span><span th:text="${task.creator}"></span></li>
+		<li><span>Completed: </span><span th:text="${task.completed}"></span></li>
+	
+		<li><a th:href="@{/task/} + ${task.id} + '/update'">Update Task</a></li>
+		<li>
+			<form th:object="${task}" th:action="@{/task/} + ${task.id}" th:method="delete">
+				<input type="submit" value="Delete Task">
+			</form>
+		</li>
+	</ul>
+
+</body>
+</html>

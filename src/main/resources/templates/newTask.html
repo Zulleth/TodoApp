@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Task</title>
+</head>
+<div th:insert="fragments/nav"></div>
+<body>
+
+	<h1>Create Task</h1>
+	<form action="#" th:action="@{/task/new}" th:object="${task}" method="post">
+		<p>Name: <input type="text" th:field="*{title}" /></p>
+	    <p>Description: <input type="text" th:field="*{description}" /></p>
+	    <p>Created By: <input type="text" th:field="*{creator}" /></p>
+	    <p>Completed: 
+	    	<select th:field="*{completed}">
+			    <option th:value="'True'" th:text="true"></option>
+			    <option th:value="'False'" th:text="false"></option>
+			</select>
+		</p>
+	    <p><input type="submit" value="Submit" /></p>
+	</form>
+	<div th:if="${message}">
+        <h3><span class="text-success" th:text="${message}"></span></h3>
+	</div>
+</body>
+</html>
