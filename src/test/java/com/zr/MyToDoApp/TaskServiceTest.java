@@ -45,8 +45,8 @@ public class TaskServiceTest {
 	
 	@Before
 	public void setUp(){
-		task1 = new Task("Homework", "study", "Zulleth", false);
-		task2 = new Task("practice", "java", "Viviana", true);
+		task1 = new Task("Homework", "study", "Zulleth");
+		task2 = new Task("practice", "java", "Viviana");
 
 		taskList = new ArrayList<>();
 		taskList.add(task2);

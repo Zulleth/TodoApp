@@ -1,17 +1,25 @@
-<style>
-	nav {
-		background-color:lightGrey;
-		padding:10px;
-	}
-</style>
-<nav>
-	<div>Task View Pages</div>
-	<ul>
-		<li><a href="/tasks">View All Tasks</a></li>
-		<li><a href="/task/new">Add New Task</a></li>
-	</ul>
-	<div>Task API Pages</div>
-	<ul>
-		<li><a href="/api/tasks">View All Tasks</a></li>
-	</ul>
-</nav>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Task Application</title>
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://kit.fontawesome.com/1d85e5385e.js"></script>
+	</head>
+	<style>
+	
+	</style>
+	<body class="bg-light">
+		<nav id="navigation" class="der sticky-top py-1 mb-5 bg-info">
+			  <div class="container d-flex flex-column flex-md-row justify-content-between">
+			    <a class="pb-3 pt-3 text-white" href="/">
+			    	<i class="fas fa-list fa-2x text-white pr-3 pl-8"></i>Home
+			    </a>
+			    <div class="justify-content-left">
+			    <a class="py-4 pl-5 pr-5 d-none d-md-inline-block text-white" href="/task/new">Create a Task</a>
+			    <a class="py-4 pl-5 pr-5 d-none d-md-inline-block text-white" href="/tasks">Task List</a>
+			  	</div>
+			  </div>
+			</nav>
+	</body>
+</html>

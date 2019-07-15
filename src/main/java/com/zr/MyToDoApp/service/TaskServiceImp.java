@@ -12,35 +12,39 @@ import com.zr.MyToDoApp.repository.TaskRepository;
 public class TaskServiceImp implements TaskServiceInt{
 	
 	@Autowired
-	private TaskRepository taskRepository;
+	private TaskRepository repository;
 	
 	@Override
 	public List<Task> findAll(){
-		return taskRepository.findAll();
+		return repository.findAll();
 	}
 	
 	@Override
 	public Task findTaskById(Long id) {
-		return taskRepository.findTaskById(id);
+		return repository.findTaskById(id);
 	}
 	
 	@Override
 	public void saveTask(Task task) {
-		taskRepository.save(task);
+		repository.save(task);
 	}
 	
 	@Override
 	public void deleteTaskById(Long id) {
-		taskRepository.deleteById(id);
+		repository.deleteById(id);
 	}
 	
 	@Override
 	public void updateTaskById(Long id, Task taskData) {
-		Task taskToReplace = taskRepository.findTaskById(id);
+		Task taskToReplace = repository.findTaskById(id);
 		Boolean completed = taskData.getCompleted();
 		if(completed = false) taskToReplace.setCompleted(false);
 		if(completed = true) taskToReplace.setCompleted(true);
-		taskRepository.save(taskToReplace);
+		repository.save(taskToReplace);
+	}
+
+	public void deleteAllTasks() {
+		repository.deleteAll();
 	}
 
 	

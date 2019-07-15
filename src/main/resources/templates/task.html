@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Java Task</title>
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	</head>
+	<div th:insert="fragments/nav"></div>
+	<body>
+	<h1 class="text-center text-info ">Task</h1>
+	<div class="container jumbotron">
+		<div class="col-6">
+			<span class="pr-3 text-info">Task:</span><span th:text="${taskItem.title}"></span>
+			<br>
+			<span class="pr-3 text-info">Description:</span><span th:text="${taskItem.description}"></span>
+			<br>
+			<span class="pr-3 text-info">Creator:</span><span th:text="${taskItem.creator}"></span>
+			<br>
+			<div th:if="${taskItem.completed!=null}">
+				<span class="pr-3 text-success">Completed</span>
+				<br>
+			</div>
+		</div>
+		<div class="col-6">
+		    <form class="pt-4" th:object="${taskItem}" th:action="@{/task/} + ${id}" th:method="delete">
+				<input class="btn btn-danger" type="submit" value="Delete Task">
+			</form>
+		   
+		   <div th:if="${taskItem.completed==null}">
+		    <form class="pt-4" th:object="${taskItem}" th:action="@{/task/} + ${id}" th:method="post">
+				<input class="btn btn-dark" type="submit" value="Complete Task">
+			</form>
+		   </div>
+		</div>
+    </div>
+	</body>
+</html>

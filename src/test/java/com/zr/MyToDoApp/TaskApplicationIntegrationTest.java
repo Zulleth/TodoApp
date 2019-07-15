@@ -37,7 +37,7 @@ public class TaskApplicationIntegrationTest {
 	
 	@Test
 	public void givenTasks_findAll_returnsHtmlAnd200Status() throws Exception {
-		task1 = new Task("Bills", "Pay Verizon bill", "Viviana", false);
+		task1 = new Task("Bills", "Pay Verizon bill", "Viviana");
 		repository.save(task1);
 		
 		mvc.perform(get("/tasks")

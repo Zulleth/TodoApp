@@ -19,9 +19,9 @@ public class Task {
 	
 	public Task() {}
 
-	public Task(String title,  String description, String creator, Boolean completed) {
+	public Task(String title,  String description, String creator) {
 		this.title = title;
-		this.completed = completed;
+		completed = false;
 		this.description = description;
 		this.creator = creator;
 	}
