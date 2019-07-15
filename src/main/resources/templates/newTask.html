@@ -12,15 +12,15 @@
 			<form action="#" th:action="@{/task/new}" th:object="${task}" method="post">
 				<div class="form-group">
 					<label for="taskInput">Task:</label>
-					<input id="taskInput" class="form-control" type="text" th:field="*{title}" required>
+					<input id="taskInput" class="form-control" type="text" th:field="*{title}" placeholder="Type a Task..." required>
 				</div>
 				<div class="form-group">
 					<label for="taskInput">Description:</label>
-					<input id="taskInput" class="form-control" type="text" th:field="*{description}" required>
+					<input id="taskInput" class="form-control" type="text" th:field="*{description}" placeholder="Type a Description..." required>
 				</div>
 				<div class="form-group">
 					<label for="authorInput">Author:</label>
-					<input id="authorInput" class="form-control" type="text" th:field="*{creator}" required>
+					<input id="authorInput" class="form-control" type="text" th:field="*{creator}" placeholder="Type the Author..." required>
 				</div>
 				
 				<input class="btn btn-secondary" type="submit" value="Submit">
